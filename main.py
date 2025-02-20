@@ -23,5 +23,15 @@ def encrypt(original_text, shift_amount):
         index = shifted_alphabet.index(letter)
         print(index)
         encrypted_word += alphabet[index]
-        
+
     print(encrypted_word)
+
+
+def encode(encrypted_text, shift_amount):
+    shifted_alphabet = []
+    for number in range(len(alphabet)):
+        # shift_amount = 2 then [y, z, a, b, c,..., w, x]
+        if shift_amount > number:
+            shifted_alphabet.append(alphabet[0 + number - shift_amount])
+        else:
+            shifted_alphabet.append(alphabet[number - shift_amount])
