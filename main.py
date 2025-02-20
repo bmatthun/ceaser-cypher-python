@@ -8,6 +8,7 @@ shift = int(input("Type the shift number:\n"))
 
 #def ceaser(original_text, shift_amount, decode_or_encode):
 
+
 def encrypt(original_text, shift_amount):
     encrypted_word = ""
     for letter in original_text:
@@ -19,12 +20,14 @@ def encrypt(original_text, shift_amount):
             encrypted_word += alphabet[shifted_index]
     print(encrypted_word)
 
+
 def decrypt(original_text, shift_amount):
     decrypted_text = ""
     for letter in original_text:
         index = alphabet.index(letter)
         decrypted_text += alphabet[index - shift_amount]
     print(decrypted_text)
+
 
 def ceaser(decrypt_or_encrypt, original_text, shift_amount):
     if decrypt_or_encrypt == "encode":
@@ -33,5 +36,6 @@ def ceaser(decrypt_or_encrypt, original_text, shift_amount):
         decrypt(original_text, shift_amount)
     else:
         print("Wrong input!")
+
 
 ceaser(direction, text, shift)
